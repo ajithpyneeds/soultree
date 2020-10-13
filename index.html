@@ -131,9 +131,35 @@
         </p>
 
         <div class="carousel-1">
-            <div class="carousel-main">
-
+            <div class="color-splash-1">
+                <img src="images/Color-Splash-1.png" alt="">
             </div>
+            
+
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="images/section2/Meet, Greet & Talk.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/section2/Mingle, Mix & Laugh.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/section2/Play & Enjoy.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/section2/Relax & Rejuvenate.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/section2/Unite & Celebrate.jpg" alt=""></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+
+
+
             <div class="carousel-descrip">
                 <p class="carousel-title">
                     Meet, Greet & Talk
@@ -146,7 +172,8 @@
 
         <div class="master-plan">
             <div class="master-plan-img">
-                <img src="" alt="">
+                <img src="images/floor-plan/floor-plan.jpg" 
+                    srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
             </div>
             <div class="master-plan-descrip">
                 <div class="master-plan-title">Master plan</div>
@@ -172,20 +199,30 @@
         <div class="floor-plans">
             <div class="floor-plans-title">Floor Plans</div>
             <div class="plan-specs">
-                <div class="serenity">Serenity</div>
-                <div class="bliss">Bliss</div>
-                <div class="nirvana">Nirvana</div>
+                <div class="spec active-spec">Serenity</div>
+                <div class="spec">Bliss</div>
+                <div class="spec">Nirvana</div>
             </div>
             <div class="plan-view">
                 <div class="plan-selection">
-
+                    <div class="facing">
+                        <p>Facing</p>
+                        <div class="box11">
+                            <select>
+                                <option>East</option>
+                                <option>West</option>
+                                <option>North</option>
+                                <option>South</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="sketch-carousel">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="sketch-img">
-                                <img src="static/images/floor-plan/floor-plan.jpg" 
-                                    srcset="static/images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
+                                <img src="images/floor-plan/floor-plan.jpg" 
+                                    srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
                             </div>
                         </div>
                     </div>
@@ -379,7 +416,29 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script>       
+    <script>    
+    
+                    var mySwiper = new Swiper('.swiper-container', {
+                // Optional parameters
+                loop: true,
+                slidesPerView: 3,
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                })
+
+        var mySwiper = new Swiper('.sketch-carousel', {
+                    slidesPerView: 'auto',
+                    // spaceBetween: 16,
+                
+                    navigation: {
+                    nextEl: '.right',
+                    prevEl: '.left',
+                    },
+                })
            
 
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
