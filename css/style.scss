@@ -492,19 +492,19 @@ body {
 
 // ####################################################################################
 .landing-section {
-  // background-image: url("/images/soultree/soultree.jpg");
+  // background-image: url("/images/Banner1.jpg");
   // background-repeat: no-repeat;
   // background-position: center;
-  // width: 100vw;
   height: 51.77vw;
-  margin: auto;
+  // margin: auto;
 
   .landing-img {
-    width: 100%;
+    height: 100%;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -516,7 +516,7 @@ body {
     align-items: center;
     width: 100%;
     margin: auto;
-    margin-top: -55vw;
+    margin-top: -50vw;
 
     .soultree-logo {
       width: 20vw;
@@ -529,7 +529,7 @@ body {
     }
 
     .main-title {
-      font-family: AmalfiCoast;
+      font-family: 'AmalfiCoast';
       font-size: 2.71vw;
       font-weight: $fontThin;
     }
@@ -574,7 +574,7 @@ body {
     .carousel-descrip {
 
       .carousel-title {
-        font-size: ;
+        font-size: 2.34vw;
       }
     }
   }
@@ -583,137 +583,155 @@ body {
 // ####################################################################################
 //Timeline Section Starts
 
-@mixin circle($size) {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  left: calc(50% - #{$size/2});
-  top: calc(50% - #{$size/2});
-  width: $size;
-  height: $size;
-}
-
-$size: 200px;
-.progress-pie-chart {
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-  background-color: #E5E5E5;
-  position: relative;
-  &.gt-50 {
-    background-color: #81CE97;
-  }
-}
-.ppc-progress {
-  @include circle($size);
-  clip: rect(0, $size, $size, #{$size/2});
-  .ppc-progress-fill {
-    @include circle($size);
-    clip: rect(0, #{$size/2}, $size, 0);
-    background: #81CE97;
-    transform: rotate(60deg);
-  }
-  .gt-50 & {
-    clip: rect(0, #{$size/2}, $size, 0);
-    .ppc-progress-fill {
-      clip: rect(0, $size, $size, #{$size/2});
-      background: #E5E5E5;
-    }
-  }
-}
-.ppc-percents {
-  @include circle(#{$size/1.15});
-  background: #fff;
-  text-align: center;
-  display: table;
-  span {
-    display: block;
-    font-size: 2.6em;
-    font-weight: bold;
-    color: #81CE97;
-  }
-}
-.pcc-percents-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-//Timeline Section Ends
 .timeline {
-  font-family: Titillium Web, sans-serif;
-  background-color: $cream;
-  width: 100vw;
-  height: 43.5vw;
-}
-
-#lineCont {
-  width: 60%;
-  height: 20%;
-}
-
-#line {
-  height: 6px;
-  width: 70%;
-  background: $black;
-  border-radius: 5px;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  position: relative;
-}
-
-#span {
-  display: none;
-  width: 70%;
-  margin: auto;
-  margin-top: 25%;
-  text-align: center;
-  color: white;
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  background: #e97162;
-  border-radius: 15px;
-  position: absolute;
-  top: -6px;
-  border: 3px solid white;
-  cursor: pointer;
-  &:before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: white;
-    position: absolute;
-    border-radius: 100%;
-    top: 2px;
-    left: 2px;
-    display: none;
+  padding-left: 14.9vw;
+  padding-top: 6.61vw;
+  height: 43.49vw;
+  background-color: $white-five;
+ 
+  .timeline-title {
+    font-size: 3.125vw;
+    font-weight: $fontBold;
+    margin-bottom: 4.2vw;
   }
-  .popupSpan {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    white-space: nowrap;
-    display: inline-block;
-    color: white;
-    position: absolute;
-    top: 20px;
-    left: -75px;
-    display: none;
-    transition: all 0.1s ease-out;
-  }
-  // &:nth-child(odd) .popupSpan {
-  //   top: 20px;
-  // }
-  &.hover:before, &.active:before {
-    display: block;
-  }
-  &.hover .popupSpan, &.active .popupSpan {
-    display: block;
-  }
-  &.active .popupSpan {
-    top: -40px;
+
+  .progress-timeline {
+    display: flex;
+
+    @mixin circle($size) {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      left: calc(50% - #{$size/2});
+      top: calc(50% - #{$size/2});
+      width: $size;
+      height: $size;
+    }
+    
+    $size: 18.28vw;
+    .progress-pie-chart {
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      // background-color: #E5E5E5;
+      position: relative;
+      &.gt-50 {
+        background-color: red;
+      }
+    }
+    .ppc-progress {
+      @include circle($size);
+      clip: rect(0, $size, $size, #{$size/2});
+      .ppc-progress-fill {
+        @include circle($size);
+        clip: rect(0, #{$size/2}, $size, 0);
+        background: $black;
+        transform: rotate(60deg);
+      }
+      .gt-50 & {
+        clip: rect(0, #{$size/2}, $size, 0);
+        .ppc-progress-fill {
+          clip: rect(0, $size, $size, #{$size/2});
+          background: #E5E5E5;
+        }
+      }
+    }
+    .ppc-percents {
+      @include circle(#{$size/1.07});
+      background: $white-five;
+      border: .25vw solid $black;
+      text-align: center;
+      display: table;
+      span {
+        display: block;
+        font-size: 3.125vw;
+        font-weight: bold;
+        color: $black;
+      }
+    }
+    .pcc-percents-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    //Timeline Section Ends
+    .timeline {
+      font-family: Titillium Web, sans-serif;
+      background-color: $cream;
+      width: 100vw;
+      height: 43.5vw;
+    }
+    
+    #lineCont {
+      width: 60%;
+      height: 20%;
+    }
+    
+    #line {
+      height: 6px;
+      width: 70%;
+      background: $black;
+      border-radius: 5px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+    }
+    
+    #span {
+      display: none;
+      width: 70%;
+      margin: auto;
+      margin-top: 25%;
+      text-align: center;
+      color: white;
+    }
+    
+    .circle {
+      width: 20px;
+      height: 20px;
+      background: $white-five;
+      border-radius: 15px;
+      position: absolute;
+      top: -6px;
+      border: 3px solid $black;
+      cursor: pointer;
+      &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: $black;
+        position: absolute;
+        border-radius: 100%;
+        top: 2px;
+        left: 2px;
+        display: none;
+      }
+      .popupSpan {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        white-space: nowrap;
+        display: inline-block;
+        color: white;
+        position: absolute;
+        top: 20px;
+        left: -75px;
+        display: none;
+        transition: all 0.1s ease-out;
+      }
+      // &:nth-child(odd) .popupSpan {
+      //   top: 20px;
+      // }
+      &.hover:before, &.active:before {
+        display: block;
+      }
+      &.hover .popupSpan, &.active .popupSpan {
+        display: block;
+      }
+      &.active .popupSpan {
+        top: -40px;
+      }
+    }
   }
 }
 
@@ -782,10 +800,11 @@ $size: 200px;
 //####################################################################################
 .location-section {
   font-family: Titillium Web, sans-serif;
+  background-color: $white-five;
   padding-top: 9.36vw;
   height: 67.6vw;
   width: 100vw;
-  margin-left: 14.9vw;
+  padding-left: 14.9vw;
 
   .location-title {
     font-size: 3.125vw;
@@ -804,7 +823,12 @@ $size: 200px;
     margin-top: 3vw;
 
     .location-img {
-      width: 50%;
+      width: 40%;
+      background-image: url('/images/Color-Splash-3.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      // background-attachment: fixed;
 
       img {
         width: 100%;
@@ -813,7 +837,106 @@ $size: 200px;
     }
 
     .location-distance {
-      width: 50%;
+      width: 40%;
+      padding-left: 5vw;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        li {
+          width: 40%;
+          margin-bottom: 3.39vw;
+
+          .place {
+            font-size: 1.2vw;
+          }
+
+          .kms {
+            font-size: 1.2vw;
+            font-weight: $fontBold;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ####################################################################################
+.otherProjects {
+  height: 40.17vw;
+  width: 100vw;
+  padding-top: 6vw;
+
+  .otherProjects-title {
+    font-size: 3.125vw;
+    font-weight: $fontBold;
+    margin-left: 14.9vw;
+  }
+
+  .otherProjects-Content {
+    width: 40%;
+    margin: auto;
+    grid-column-gap: 2.03vw;
+    padding-top: 6.09vw;
+    display: flex;
+
+    .proj-img {
+      width: 28.18vw;
+      height: 17.3vw;
+      border-radius: 1.5vw; 
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.5vw; 
+      }
+    }
+
+    .baseline-bttn {
+      width: 14vw;
+      margin-top: 8vw;
+
+      .buttn {
+        height: 3.54vw;
+        width: 12.4vw;
+        background-color: $black;
+        border-radius: 0.26vw;
+        transition: width 500ms;
+        
+        .black-button {
+            border: none;
+            height: 3.54vw;
+            width: 12.4vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9vw;
+            letter-spacing: 3.44px;
+            border-radius: 0.26vw;
+            font-weight: $fontBold;
+            color: $white-two;
+        }
+      }
+    
+      .buttn:hover {
+        height: 3.54vw;
+        width: 0;
+    
+        .black-button {
+            color: $black;
+        }
+    
+        .black-button::after {
+            content: '\f105';
+            font-family: fontAwesome;
+            font-size: .9vw;
+            font-weight: $fontThin;
+            padding-left: .6vw;
+            color: $black;
+        }
+      }
     }
   }
 }
