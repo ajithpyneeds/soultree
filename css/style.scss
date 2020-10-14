@@ -44,7 +44,8 @@ body {
 
 // Navbar Starts
 .nav-bar {
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -548,7 +549,6 @@ body {
 // ####################################################################################
 .main-section {
   height: auto;
-  margin-left: 14.9vw;
   padding-top: 8.39vw;
   font-family: Titillium Web, sans-serif;
 
@@ -556,48 +556,168 @@ body {
     font-size: 3.125vw;
     font-weight: $fontBold;
     margin-bottom: 2.76vw;
+    margin-left: 14.9vw;
   }
 
   .main-subtitle {
     width: 75vw;
     font-size: 1.2vw;
     line-height: 1.43;
+    margin-left: 14.9vw;
   }
 
   .carousel-1 {
     display: flex;
-    align-items: center;
-    margin-top: 2vw;
-    // background-color: yellow;
-    margin-left: -30vw;
+    margin-top: -5vw;
 
     .color-splash-1 {
-      width: 35.42vw;
-      height: 64.48vw;
-      margin-left: -14.9vw;
+      width: 35vw;
+      height: 64.5vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
-    .swiper-container {
-      height: 33.8vw;
-      width: 45vw;
-      // background: red;
+    .carousel-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -25vw;
+      margin-left: -8.5vw;
 
-      .swiper-slide {
-        width: 25.8vw;
-        height: 100%;
-        border-radius: .5vw;
-        // background: green;
-
-        img {
+      .carousel {
+        display: flex;
+        align-items: center;
+        font-family: Arial;
+      
+        &__list {
+          display: flex;
+          list-style: none;
+          position: relative;
           width: 100%;
-          height: auto;
-          border-radius: .5vw;
+          height: 15.625vw;
+          justify-content: center;
+          perspective: 15.625vw;
         }
+        
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: 0px;
+          width: 25.8vw;
+          height: 33.8vw;
+          border-radius: 1vw;
+          box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+          position: absolute;
+          transition: all .3s ease-in;
+          
+          &:nth-child(3) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+          
+          &:nth-child(4) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+  
+          &:nth-child(5) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+          
+          &[data-pos="0"] {
+            z-index: 5;
+          }
+          
+          &[data-pos="-1"],
+          &[data-pos="-2"] {
+          opacity: 0;
+          filter: blur(1px) grayscale(10%);
+        }
+  
+          &[data-pos="1"] {
+            opacity: .8;
+            // filter: blur(1px) grayscale(10%);
+          }
+          
+          &[data-pos="-1"] {
+            transform: translateX(-40%) scale(.9);
+            z-index: 4;
+          }
+          
+          &[data-pos="1"] {
+            transform: translateX(40%) scale(.9);
+            z-index: 4;
+          }
+          
+          &[data-pos="2"] {
+            opacity: .5;
+            // filter: blur(3px) grayscale(10%);
+          }
+          
+          &[data-pos="-2"] {
+            transform: translateX(-70%) scale(.8);
+            z-index: 3;
+          }
+          
+          &[data-pos="2"] {
+            transform: translateX(70%) scale(.8);
+            z-index: 3;
+          }
+        }
+      }
+    }
+
+    .ellipse {
+      position: absolute;
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      background-color: $white-two;
+      z-index: 1;
+      margin-top: 18vw;
+      margin-left: -4.3vw;
+      color: $black;
+
+      i {
+        margin-left: 2vw;
+        margin-top: 1vw;
+        font-size: 3vw;
+        z-index: 5;
       }
     }
 
     .carousel-descrip {
       width: 27.24vw;
+      margin-left: 34vw;
+      margin-top: 17vw;
 
       .carousel-title {
         font-size: 2.34vw;
@@ -612,17 +732,227 @@ body {
       }
     }
   }
+  
+  .carousel-2-title {
+    font-size: 3.125vw;
+    font-weight: $fontBold;
+    margin-left: 14.9vw;
+    margin-top: -9vw;
+  }
+
+  .carousel-2 {
+    display: flex;
+    // margin-top: -5vw;
+
+    .carousel-descrip {
+      width: 27.24vw;
+      margin-right: 34vw;
+      margin-left: 7vw;
+      margin-top: 17vw;
+
+      .carousel-title {
+        font-size: 2.34vw;
+        font-weight: $fontBold;
+        margin-bottom: 1.93vw;
+      }
+
+      .carousel-details {
+        font-size: 1.2vw;
+        line-height: 1.43;
+
+      }
+    }
+
+    .carousel-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -25vw;
+      margin-left: 8vw;
+
+      .carousel {
+        display: flex;
+        align-items: center;
+        font-family: Arial;
+      
+        &__list {
+          display: flex;
+          list-style: none;
+          position: relative;
+          width: 100%;
+          height: 15.625vw;
+          justify-content: center;
+          perspective: 15.625vw;
+        }
+        
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: 0px;
+          width: 25.8vw;
+          height: 33.8vw;
+          border-radius: 1vw;
+          box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+          position: absolute;
+          transition: all .3s ease-in;
+          
+          &:nth-child(3) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+          
+          &:nth-child(2) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+  
+          &:nth-child(1) {
+            width: 25.8vw;
+            height: 33.8vw;
+            border-radius: 1vw;
+  
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1vw;
+            }
+          }
+          
+          &[data-pos="0"] {
+            z-index: 5;
+          }
+          
+          &[data-pos="1"],
+          &[data-pos="2"] {
+          opacity: 0;
+          filter: blur(1px) grayscale(10%);
+        }
+  
+          &[data-pos="-1"] {
+            opacity: .8;
+            // filter: blur(1px) grayscale(10%);
+          }
+          
+          &[data-pos="-1"] {
+            transform: translateX(-40%) scale(.9);
+            z-index: 4;
+          }
+          
+          &[data-pos="1"] {
+            transform: translateX(40%) scale(.9);
+            z-index: 4;
+          }
+          
+          &[data-pos="-2"] {
+            opacity: .5;
+            // filter: blur(3px) grayscale(10%);
+          }
+          
+          &[data-pos="-2"] {
+            transform: translateX(-70%) scale(.8);
+            z-index: 3;
+          }
+          
+          &[data-pos="2"] {
+            transform: translateX(70%) scale(.8);
+            z-index: 3;
+          }
+        }
+      }
+    }
+
+    .ellipse {
+      position: absolute;
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      background-color: $white-two;
+      z-index: 1;
+      margin-top: 18vw;
+      margin-left: 11vw;
+      color: $black;
+
+      i {
+        margin-left: 2vw;
+        margin-top: 1vw;
+        font-size: 3vw;
+        z-index: 5;
+      }
+    }
+    
+    .color-splash-2 {
+      width: 45.26vw;
+      height: 47.12vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 
   .master-plan {
     display: flex;
+    // padding-left: 14.9vw;
+    padding-left: 12vw;
+    margin-top: -5vw;
 
     .master-plan-img {
+      margin-top: 3vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .master-plan-descrip {
+
+      .master-plan-title {
+        font-size: 3.125vw;
+        font-weight: $fontBold;
+        margin-top: 6vw;
+        margin-bottom: 4.5vw;
+      }
+
+      li {
+        margin-bottom: 2.5vw;
+
+        .specs {
+          font-size: 1.2vw;
+        }
+
+        .spec-details {
+          font-size: 1.56vw;
+          font-weight: $fontBold;
+        }
+      }
     }
   }
 
   .floor-plans {
-    height: 55vw;
-    // background: yellow;
+    // height: 55vw;
+    width: 100vw;
+    padding-left: 14.9vw;
+    margin-top: 8vw;
+    padding-bottom: 5vw;
 
     .floor-plans-title {
       font-size: 3.125vw;
@@ -631,6 +961,7 @@ body {
     }
 
     .plan-specs {
+      margin-left: 2.03vw;
       width: 63.54vw;
       display: flex;
       justify-content: space-between;
@@ -650,6 +981,7 @@ body {
     }
 
     .plan-view {
+      margin-left: 2.03vw;
       display: flex;
       margin-top: 4.3vw;
 
@@ -658,67 +990,151 @@ body {
         height: 35.21vw;
         background-color: $cream;
         border-radius: .1vw;
+        padding-top: 3vw;
+        margin-top: 2.9vw;
 
-        select {
-          /* for Firefox */
-          -moz-appearance: none;
-          /* for Chrome */
-          -webkit-appearance: none;
-        }
-        
-        /* For IE10 */
-        select::-ms-expand {
-          display: none;
-        }
+        .selections {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2.16vw;
 
-        .box11 {
-          margin-top: -.5vw;
-          position: absolute;
-        }
-        
-        .box11 select {
+          p {
+            font-size: 1.2vw;
+            text-align: left;
+          }
+
+          .box11 {
+            margin-top: 1.6vw;
+            position: absolute;
+          }
+          
+          .box11 select {
+              text-align: center;
+            background-color: $cream;
+            color: $black;
+            width: 9vw;
+            height: 2.1vw;
+            // border-radius: 3px;
+            border: 1px solid $cream;
+            font-size: 1.2vw;
+            font-weight: $fontBold;
+            // -webkit-appearance: button;
+            // -moz-appearance: button;
+            // appearance: button;
+            // outline: none;
+          }
+          
+          .box11::before {
+            content: "\f107";
+            background: $cream;
+            font-family: FontAwesome;
+            position: absolute;
+            top: -4px;
+            right: 3px;
+            width: 18%;
+            height: 80%;
             text-align: center;
-          // background-color: $white-two;
-          color: $black;
-          width: 10.5vw;
-          height: 3vw;
-          border-radius: 3px;
-          border-bottom: 1px solid;
-          font-size: $p;
-          font-weight: $fontThin;
-          -webkit-appearance: button;
-          -moz-appearance: button;
-          appearance: button;
-          outline: none;
+            font-weight: $fontThin;
+            font-size: 1.5vw;
+            line-height: 45px;
+            pointer-events: none;
+            color: black;
+          }
+          
+          select option {
+            width: 70%;
+            margin: auto;
+          }
         }
-        
-        .box11::before {
-          content: "\f107";
-          background: $white-two;
-          font-family: FontAwesome;
-          position: absolute;
-          top: 1px;
-          right: 3px;
-          width: 18%;
-          height: 80%;
-          text-align: center;
-          font-weight: $fontThin;
-          font-size: 1.5vw;
-          line-height: 45px;
-          pointer-events: none;
-          color: black;
+
+        .buttn {
+          height: 3.12vw;
+          width: 11.82vw;
+          background-color: $black;
+          border-radius: 0.26vw;
+          transition: width 500ms;
+          margin-left: 1.82vw;
+          
+          .black-button {
+              border: none;
+              height: 3.12vw;
+              width: 11.82vw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 0.9vw;
+              letter-spacing: 3.44px;
+              border-radius: 0.26vw;
+              font-weight: $fontBold;
+              color: $white-two;
+          }
         }
-        
-        select option {
-          width: 70%;
-          margin: auto;
-      }
+      
+        .buttn:hover {
+          height: 3.12vw;
+          width: 0;
+      
+          .black-button {
+              color: $black;
+          }
+      
+          .black-button::after {
+              content: '\f105';
+              font-family: fontAwesome;
+              font-size: .9vw;
+              font-weight: $fontThin;
+              padding-left: .6vw;
+              color: $black;
+          }
+        }
       }
 
       .sketch-carousel {
+        margin-left: 5vw;
         width: 45.57vw;
         height: 36.46vw;
         // background: red;
+
+        .ellipse1 {
+          position: absolute;
+          width: 5vw;
+          height: 5vw;
+          border-radius: 50%;
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          background-color: $white-two;
+          z-index: 1;
+          margin-top: -20vw;
+          margin-left: -2.5vw;
+          color: $black;
+    
+          i {
+            margin-left: 2vw;
+            margin-top: 1vw;
+            font-size: 3vw;
+            z-index: 5;
+          }
+        }
+
+        .ellipse2 {
+          position: absolute;
+          width: 5vw;
+          height: 5vw;
+          border-radius: 50%;
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          background-color: $white-two;
+          z-index: 1;
+          margin-top: -20vw;
+          margin-left: 45vw;
+          color: $black;
+    
+          i {
+            margin-left: 2vw;
+            margin-top: 1vw;
+            font-size: 3vw;
+            z-index: 5;
+          }
+        }
       }
     }
   }
@@ -874,6 +1290,185 @@ body {
       }
       &.active .popupSpan {
         top: -40px;
+      }
+    }
+  }
+}
+
+// ####################################################################################
+.gallery {
+  padding-top: 6.56vw;
+
+  .gallery-nav {
+    width: 35vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gallery-view {
+    width: 77vw;
+    height: 44vw;
+    margin: auto;
+  }
+}
+
+// ####################################################################################
+.amenities {
+  padding-bottom: 18vw;
+
+  .amenities-title{
+    font-size: 3.125vw;
+    font-weight: $fontBold;
+    margin-left: 14.9vw;
+  }
+
+  .carousel-A {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .carousel {
+      display: flex;
+      align-items: center;
+      margin-left: 15vw;
+      
+      &__list {
+        display: flex;
+        list-style: none;
+        position: relative;
+        width: 100%;
+        height: 15.625vw;
+        justify-content: center;
+        perspective: 15.625vw;
+      }
+      
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0px;
+        width: 25.8vw;
+        height: 33.8vw;
+        border-radius: 1vw;
+        box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+        position: absolute;
+        transition: all .3s ease-in;
+        
+        &:nth-child(3) {
+          width: 25.8vw;
+          height: 33.8vw;
+          border-radius: 1vw;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 1vw;
+          }
+        }
+        
+        &:nth-child(4) {
+          width: 25.8vw;
+          height: 33.8vw;
+          border-radius: 1vw;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 1vw;
+          }
+        }
+
+        &:nth-child(5) {
+          width: 25.8vw;
+          height: 33.8vw;
+          border-radius: 1vw;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 1vw;
+          }
+        }
+        
+        &[data-pos="0"] {
+          z-index: 5;
+        }
+        
+        &[data-pos="-1"],
+        &[data-pos="-2"] {
+        opacity: 0;
+        filter: blur(1px) grayscale(10%);
+      }
+
+        &[data-pos="1"] {
+          opacity: .8;
+          // filter: blur(1px) grayscale(10%);
+        }
+        
+        &[data-pos="-1"] {
+          transform: translateX(-40%) scale(.9);
+          z-index: 4;
+        }
+        
+        &[data-pos="1"] {
+          transform: translateX(40%) scale(.9);
+          z-index: 4;
+        }
+        
+        &[data-pos="2"] {
+          opacity: .5;
+          // filter: blur(3px) grayscale(10%);
+        }
+        
+        &[data-pos="-2"] {
+          transform: translateX(-70%) scale(.8);
+          z-index: 3;
+        }
+        
+        &[data-pos="2"] {
+          transform: translateX(70%) scale(.8);
+          z-index: 3;
+        }
+      }
+    }
+  
+  
+    .ellipse {
+      position: absolute;
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      background-color: $white-two;
+      z-index: 1;
+      margin-top: 18vw;
+      margin-left: 10.3vw;
+      color: $black;
+  
+      i {
+        margin-left: 2vw;
+        margin-top: 1vw;
+        font-size: 3vw;
+        z-index: 5;
+      }
+    }
+  
+    .carousel-descrip {
+      width: 27.24vw;
+      margin-left: 34vw;
+      margin-top: 17vw;
+  
+      .carousel-title {
+        font-size: 2.34vw;
+        font-weight: $fontBold;
+        margin-bottom: 1.93vw;
+      }
+  
+      .carousel-details {
+        font-size: 1.2vw;
+        line-height: 1.43;
+  
       }
     }
   }

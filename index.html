@@ -46,12 +46,20 @@
     <!-- GSAP Scroll Magic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
+    <style>
+        .sticky {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- Navbar Starts [Desktop]-->
-    <div class="nav-bar content-desktop">
+    <div class="nav-bar content-desktop" id="navbar">
         <div class="logo-container">
             <div class="logo">
                 <div class="fillet-div">
@@ -91,7 +99,7 @@
     <!-- Navbar Ends [Desktop]-->
 
     <!-- #################################################################################### -->
-    <div class="menu-pages">
+    <div class="menu-pages" id="navbar">
         <ul>
             <li class="active-menu">Explore Soultree</li>
             <li>Master Plan</li>
@@ -134,39 +142,82 @@
             <div class="color-splash-1">
                 <img src="images/Color-Splash-1.png" alt="">
             </div>
-            
 
-            <!-- Slider main container -->
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><img src="images/section2/Meet, Greet & Talk.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/section2/Mingle, Mix & Laugh.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/section2/Play & Enjoy.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/section2/Relax & Rejuvenate.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/section2/Unite & Celebrate.jpg" alt=""></div>
+            <div class="carousel-flex">
+                <div class="carousel">
+                    <ul class="carousel__list">
+                    <li class="carousel__item" data-pos="-2">
+                        <img src="images/section2/Relax & Rejuvenate.jpg" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="-1">
+                        <img src="images/section2/Unite & Celebrate.jpg" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="0">
+                        <img src="images/section2/Meet, Greet & Talk.jpg" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="1">
+                        <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="2">
+                        <img src="images/section2/Play & Enjoy.jpg" alt="">
+                    </li>
+                    </ul>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
 
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="ellipse">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
 
-                <!-- If we need scrollbar -->
-                <!-- <div class="swiper-scrollbar"></div> -->
+                <div class="carousel-descrip">
+                    <p class="carousel-title">
+                        Meet, Greet & Talk
+                    </p>
+                    <p class="carousel-details">
+                        From lobbies of the living areas, various seating clusters in & around the project to the corridor spaces, there are various thoughtfully designed ‘pause points’ to incorporate enthusiastic welcomes and lingering goodbyes. Wholesome architectural enhancements for you to meet, greet & talk.
+                    </p>
+                </div>
             </div>
+        </div>
 
+        <p class="carousel-2-title">Explore Soultree</p>
+        <div class="carousel-2">
+            <div class="carousel-flex">
 
+                <div class="carousel-descrip">
+                    <p class="carousel-title">
+                        Feel the light
+                    </p>
+                    <p class="carousel-details">
+                        Our rooms, terraces & balconies are designed to take advantage of the Bangalore sun and bathe in natural light. The homes are compact and smart with good views, light and fresh air. All you need for a productive day and a good night’s sleep.
+                    </p>
+                </div>
 
-            <div class="carousel-descrip">
-                <p class="carousel-title">
-                    Meet, Greet & Talk
-                </p>
-                <p class="carousel-details">
-                    From lobbies of the living areas, various seating clusters in & around the project to the corridor spaces, there are various thoughtfully designed ‘pause points’ to incorporate enthusiastic welcomes and lingering goodbyes. Wholesome architectural enhancements for you to meet, greet & talk.
-                </p>
+                <div class="ellipse">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+
+                <div class="carousel">
+                    <ul class="carousel__list">
+                    <li class="carousel__item" data-pos="-2">
+                        <img src="images/section3/Feel Smart.jpg" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="-1">
+                        <img src="images/section3/Feel good.png" alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="0">
+                        <img src="images/section3/Feel the light.jpg " alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="1">
+                        <img src="images/section3/Feel the design.png " alt="">
+                    </li>
+                    <li class="carousel__item" data-pos="2">
+                        <img src="images/section3/Feel green.png " alt="">
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="color-splash-2">
+                <img src="images/Color-Splash-2.png" alt="">
             </div>
         </div>
 
@@ -205,7 +256,18 @@
             </div>
             <div class="plan-view">
                 <div class="plan-selection">
-                    <div class="facing">
+                    <div class="selections">
+                        <p>Wing</p>
+                        <div class="box11">
+                            <select>
+                                <option>A <span></span></option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selections">
                         <p>Facing</p>
                         <div class="box11">
                             <select>
@@ -216,6 +278,30 @@
                             </select>
                         </div>
                     </div>
+                    <div class="selections">
+                        <p>BHK</p>
+                        <div class="box11">
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selections">
+                        <p>SBA</p>
+                        <div class="box11">
+                            <select>
+                                <option>1214</option>
+                                <option>1215</option>
+                                <option>1216</option>
+                                <option>1217</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="buttn">
+                        <button class="black-button" type="submit">VIEW PLAN</button>
+                    </div>
                 </div>
                 <div class="sketch-carousel">
                     <div class="swiper-wrapper">
@@ -225,6 +311,12 @@
                                     srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
                             </div>
                         </div>
+                    </div>
+                    <div class="ellipse1">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="ellipse2">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -249,6 +341,61 @@
                 <div id="line"></div>
                 <div id="span">Date Placeholder</div>
             </div>
+        </div>
+    </div>
+
+    <!-- #################################################################################### -->
+    <div class="gallery">
+        <div class="gallery-nav">
+            <div class="gal">Gallery</div>
+            <div class="gal-nav">Walkthrough</div>
+            <div class="gal-nav">Photos</div>
+        </div>
+        <div class="gallery-view">
+            <div class="gall-img">
+                <img src="images/soultree/soultree.jpg"
+                srcset="images/soultree/soultree@2x.jpg 2x,
+                images/soultree/soultree@3x.jpg 3x">  
+            </div>
+        </div>
+    </div>
+
+    <!-- #################################################################################### -->
+    <div class="amenities">
+        <div class="amenities-title">Amenities</div>
+        <div class="carousel-A">
+                <div class="carousel">
+                    <ul class="carousel__list">
+                        <li class="carousel__item" data-pos="-2">
+                            <img src="images/section2/Relax & Rejuvenate.jpg" alt="">
+                        </li>
+                        <li class="carousel__item" data-pos="-1">
+                            <img src="images/section2/Unite & Celebrate.jpg" alt="">
+                        </li>
+                        <li class="carousel__item" data-pos="0">
+                            <img src="images/section2/Meet, Greet & Talk.jpg" alt="">
+                        </li>
+                        <li class="carousel__item" data-pos="1">
+                            <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="">
+                        </li>
+                        <li class="carousel__item" data-pos="2">
+                            <img src="images/section2/Play & Enjoy.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ellipse">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+
+                <div class="carousel-descrip">
+                    <p class="carousel-title">
+                        Clubhouse
+                    </p>
+                    <p class="carousel-details">
+                        From lobbies of the living areas, various seating clusters in & around the project to the corridor spaces, there are various thoughtfully designed ‘pause points’ to incorporate enthusiastic welcomes and lingering goodbyes. Wholesome architectural enhancements for you to meet, greet & talk.
+                    </p>
+                </div>
         </div>
     </div>
 
@@ -416,8 +563,36 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script>    
+    <script>  
     
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-5vw";
+            }
+            prevScrollpos = currentScrollPos;
+            }
+    
+
+
+
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById("navbar2");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+            }
+
+
+
                     var mySwiper = new Swiper('.swiper-container', {
                 // Optional parameters
                 loop: true,
@@ -466,7 +641,54 @@
             },
         })
          }
+
+
+
+
+        //  Carousel
+        const state = {};
+        const carouselList = document.querySelector('.carousel__list');
+        const carouselItems = document.querySelectorAll('.carousel__item');
+        const elems = Array.from(carouselItems);
+
+        carouselList.addEventListener('click', function (event) {
+        var newActive = event.target;
+        var isItem = newActive.closest('.carousel__item');
+
+        if (!isItem || newActive.classList.contains('carousel__item_active')) {
+            return;
+        };
         
+        update(newActive);
+        });
+
+        const update = function(newActive) {
+        const newActivePos = newActive.dataset.pos;
+
+        const current = elems.find((elem) => elem.dataset.pos == 0);
+        const prev = elems.find((elem) => elem.dataset.pos == -1);
+        const next = elems.find((elem) => elem.dataset.pos == 1);
+        const first = elems.find((elem) => elem.dataset.pos == -2);
+        const last = elems.find((elem) => elem.dataset.pos == 2);
+        
+        current.classList.remove('carousel__item_active');
+        
+        [current, prev, next, first, last].forEach(item => {
+            var itemPos = item.dataset.pos;
+
+            item.dataset.pos = getPos(itemPos, newActivePos)
+        });
+        };
+
+        const getPos = function (current, active) {
+        const diff = current - active;
+
+        if (Math.abs(current - active) > 2) {
+            return -current
+        }
+
+        return diff;
+        }
     </script>
 
     <script>
