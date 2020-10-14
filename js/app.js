@@ -45,7 +45,7 @@ $(function(){
 
 //Timeline
 //Sample dates
-var dates = ["6/12/2015", "8/15/2015", "10/22/2015", "11/2/2015", "12/22/2015"];
+var dates = ["6/12/2020", "8/15/2021", "10/22/2021", "11/2/2021", "12/22/2021"];
 //For the purpose of stringifying MM/DD/YYYY date format
 var monthSpan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 

@@ -990,18 +990,18 @@ body {
         height: 35.21vw;
         background-color: $cream;
         border-radius: .1vw;
-        padding-top: 3vw;
+        padding-top: 3.8vw;
         margin-top: 2.9vw;
 
         .selections {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 2.16vw;
+          // flex-direction: column;
+          // align-items: center;
+          margin-bottom: 3.5vw;
 
           p {
             font-size: 1.2vw;
-            text-align: left;
+            margin-left: 3.5vw;
           }
 
           .box11 {
@@ -1010,8 +1010,9 @@ body {
           }
           
           .box11 select {
-              text-align: center;
+              // text-align: center;
             background-color: $cream;
+            margin-left: 3vw;
             color: $black;
             width: 9vw;
             height: 2.1vw;
@@ -1071,23 +1072,23 @@ body {
           }
         }
       
-        .buttn:hover {
-          height: 3.12vw;
-          width: 0;
+        // .buttn:hover {
+        //   height: 3.12vw;
+        //   width: 0;
       
-          .black-button {
-              color: $black;
-          }
+        //   .black-button {
+        //       color: $black;
+        //   }
       
-          .black-button::after {
-              content: '\f105';
-              font-family: fontAwesome;
-              font-size: .9vw;
-              font-weight: $fontThin;
-              padding-left: .6vw;
-              color: $black;
-          }
-        }
+        //   .black-button::after {
+        //       content: '\f105';
+        //       font-family: fontAwesome;
+        //       font-size: .9vw;
+        //       font-weight: $fontThin;
+        //       padding-left: .6vw;
+        //       color: $black;
+        //   }
+        // }
       }
 
       .sketch-carousel {
@@ -1148,6 +1149,7 @@ body {
   padding-top: 6.61vw;
   height: 43.49vw;
   background-color: $white-five;
+  font-family: Titillium Web, sans-serif;
  
   .timeline-title {
     font-size: 3.125vw;
@@ -1213,28 +1215,27 @@ body {
       display: table-cell;
       vertical-align: middle;
     }
-    //Timeline Section Ends
-    .timeline {
-      font-family: Titillium Web, sans-serif;
-      background-color: $cream;
-      width: 100vw;
-      height: 43.5vw;
-    }
     
     #lineCont {
       width: 60%;
       height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
     }
     
     #line {
-      height: 6px;
-      width: 70%;
+      border-bottom-style: dashed;
+      height: 2px;
+      width: 80%;
       background: $black;
       border-radius: 5px;
       margin: auto;
       top: 50%;
       transform: translateY(-50%);
       position: relative;
+      // border-bottom: 1px dashed $black;
     }
     
     #span {
@@ -1243,7 +1244,7 @@ body {
       margin: auto;
       margin-top: 25%;
       text-align: center;
-      color: white;
+      color: $black;
     }
     
     .circle {
@@ -1252,7 +1253,7 @@ body {
       background: $white-five;
       border-radius: 15px;
       position: absolute;
-      top: -6px;
+      top: -.5vw;
       border: 3px solid $black;
       cursor: pointer;
       &:before {
@@ -1272,7 +1273,7 @@ body {
         padding: 10px;
         white-space: nowrap;
         display: inline-block;
-        color: white;
+        color: $black;
         position: absolute;
         top: 20px;
         left: -75px;
@@ -1294,35 +1295,73 @@ body {
     }
   }
 }
+//Timeline Section Ends
 
 // ####################################################################################
 .gallery {
   padding-top: 6.56vw;
 
   .gallery-nav {
-    width: 35vw;
+    width: 77vw;
+    margin: auto;
+    margin-bottom: 4.79vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    .gal {
+      font-size: 3.125vw;
+      font-weight: $fontBold;
+      margin-left: 45vw;
+    }
+
+    .gal-nav {
+      font-size: 1.2vw;
+      font-weight: $fontBold;
+      color: #b2b2b2;
+      margin-left: 3.33vw;
+    }
+
+    .active-gal {
+      color: $black;
+      border-bottom: 5px solid $black;
+    }
   }
 
   .gallery-view {
     width: 77vw;
     height: 44vw;
     margin: auto;
+    border-radius: 1.56vw;
+
+    .gal-img {
+      width: 77vw;
+      height: 44vw;
+      border-radius: 1.56vw;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.56vw;
+      }
+    }
   }
 }
 
 // ####################################################################################
 .amenities {
+  // margin-top: 10.3vw;
   padding-bottom: 18vw;
 
   .amenities-title{
+    margin-top: 10vw;
     font-size: 3.125vw;
     font-weight: $fontBold;
     margin-left: 14.9vw;
   }
 
   .carousel-A {
+    margin-top: -4vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1576,7 +1615,7 @@ body {
     }
 
     .location-distance {
-      width: 40%;
+      width: 45%;
       padding-left: 5vw;
 
       ul {
@@ -1585,7 +1624,7 @@ body {
         flex-wrap: wrap;
 
         li {
-          width: 40%;
+          width: 45%;
           margin-bottom: 3.39vw;
 
           .place {
@@ -1627,15 +1666,17 @@ body {
       border-radius: 1.5vw; 
 
       img {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
         border-radius: 1.5vw; 
+        object-fit: cover;
       }
     }
 
     .baseline-bttn {
       width: 14vw;
-      margin-top: 8vw;
+      display: flex;
+      align-items: flex-end;
 
       .buttn {
         height: 3.54vw;
