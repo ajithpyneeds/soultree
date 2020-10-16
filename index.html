@@ -99,35 +99,34 @@
     <!-- Navbar Ends [Desktop]-->
 
     <!-- #################################################################################### -->
-    <div class="menu-pages" id="navbar">
-        <ul>
-            <li class="active-menu">Explore Soultree</li>
-            <li>Master Plan</li>
-            <li>Gallery</li>
-            <li>Amenities</li>
-            <li>Contact</li>
-        </ul>
-    </div>
-
-    <!-- #################################################################################### -->
-    <div class="landing-section">
-        <div class="landing-img">
-            <img src="images/Banner1.jpg">
+    <div class="landing-container">
+        <div class="menu-pages" id="navbar">
+            <div>
+                <a class="active-menu" href="#explore-soultree">Explore Soultree</a>
+                <a href="#master-plan">Master Plan</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
+
         <div class="overlay-content">
             <div class="soultree-logo">
                 <img src="images/Soul-tree_G.png" alt="">
             </div>
-            <p class="main-title">
+            <!-- <p class="main-title">
                 More than just a dream home!
-            </p>
+            </p> -->
             <p class="sub-title">
                 Fully automated futuristic & intelligent luxury 1, 2 and 3 BHK apartments with a multitude of amenities located
                 amidst green cover at Sompura Gate, Sarjapur Road
             </p>
         </div>
-    </div>
 
+        <div class="landing-img">
+            <img src="images/Banner1.jpg">
+        </div>
+    </div>
     <!-- #################################################################################### -->
     <div class="main-section">
         <p class="main-title">
@@ -146,21 +145,11 @@
             <div class="carousel-flex">
                 <div class="carousel">
                     <ul class="carousel__list">
-                    <li class="carousel__item" data-pos="-2">
-                        <img src="images/section2/Relax & Rejuvenate.jpg" alt="">
-                    </li>
-                    <li class="carousel__item" data-pos="-1">
-                        <img src="images/section2/Unite & Celebrate.jpg" alt="">
-                    </li>
-                    <li class="carousel__item" data-pos="0">
-                        <img src="images/section2/Meet, Greet & Talk.jpg" alt="">
-                    </li>
-                    <li class="carousel__item" data-pos="1">
-                        <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="">
-                    </li>
-                    <li class="carousel__item" data-pos="2">
-                        <img src="images/section2/Play & Enjoy.jpg" alt="">
-                    </li>
+                        <img src="images/section2/Relax & Rejuvenate.jpg" alt="" class="carousel__item" data-pos="-2">
+                        <img src="images/section2/Unite & Celebrate.jpg" alt="" class="carousel__item" data-pos="-1">
+                        <img src="images/section2/Meet, Greet & Talk.jpg" alt="" class="carousel__item" data-pos="0">
+                        <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="" class="carousel__item" data-pos="1">
+                        <img src="images/section2/Play & Enjoy.jpg" alt="" class="carousel__item" data-pos="2">
                     </ul>
                 </div>
 
@@ -179,7 +168,7 @@
             </div>
         </div>
 
-        <p class="carousel-2-title">Explore Soultree</p>
+        <p class="carousel-2-title" id="explore-soultree">Explore Soultree</p>
         <div class="carousel-2">
             <div class="carousel-flex">
 
@@ -221,9 +210,9 @@
             </div>
         </div>
 
-        <div class="master-plan">
+        <div class="master-plan" id="master-plan">
             <div class="master-plan-img">
-                <img src="images/floor-plan/floor-plan.jpg" 
+                <img src="images/MASTER-PLAN.png" 
                     srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
             </div>
             <div class="master-plan-descrip">
@@ -299,23 +288,30 @@
                             </select>
                         </div>
                     </div>
-                    <div class="buttn">
+                    <!-- <div class="buttn">
                         <button class="black-button" type="submit">VIEW PLAN</button>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="sketch-carousel">
+                <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="sketch-img">
-                                <img src="images/floor-plan/floor-plan.jpg" 
+                            <img src="images/floor-plan/floor-plan.jpg" 
                                     srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
-                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/floor-plan/floor-plan.jpg" 
+                                    srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/floor-plan/floor-plan.jpg" 
+                                    srcset="images/floor-plan/floor-plan@2x.jpg 2x, static/images/floor-plan/floor-plan@3x.jpg 3x">
                         </div>
                     </div>
-                    <div class="ellipse1">
+
+                    <div class="ellipse1" style="z-index: 100;">
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                     </div>
-                    <div class="ellipse2">
+                    <div class="ellipse2" style="z-index: 100;">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -345,57 +341,120 @@
     </div>
 
     <!-- #################################################################################### -->
-    <div class="gallery">
+    <div class="gallery" id="gallery">
         <div class="gallery-nav">
             <div class="gal">Gallery</div>
-            <div class="gal-nav active-gal">Walkthrough</div>
-            <div class="gal-nav">Photos</div>
+            <div class="gal-nav active-gal" onclick="vFunc()" id="walkthrough">Walkthrough</div>
+            <div class="gal-nav" onclick="iFunc()" id="photos">Photos</div>
         </div>
         <div class="gallery-view">
-            <div class="gal-img">
-                <img src="images/gallery/gallery.jpg"
-                srcset="images/gallery/gallery@2x.jpg 2x,
-                images/gallery/gallery@3x.jpg 3x">  
+            <iframe class="gal-img" style="display: block;" id="gal-V" src="https://www.youtube.com/embed/gnW_MOJ6rvI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="gal-img" style="display: none; cursor: pointer;" id="gal-I">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                </div>
+                <div class="fillet-box">
+                    <div class="left-box">
+                        <a><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="right-box">
+                        <a><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
             </div>
+
+            <!-- <div class="gal-img" style="display: none; cursor: pointer;" id="gal-I">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/gallery/gallery.jpg"
+                        srcset="images/gallery/gallery@2x.jpg 2x,
+                        images/gallery/gallery@3x.jpg 3x">  
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div> -->
         </div>
     </div>
 
+    <script>
+        function vFunc() {
+            var a = document.getElementById('gal-V');
+            var b = document.getElementById('gal-I');
+            var c = document.getElementById('walkthrough');
+            var d = document.getElementById('photos');
+            if (a.style.display === 'none') {
+                a.style.display = 'block';
+                b.style.display = 'none';
+                c.classList.add('active-gal');
+                d.classList.remove('active-gal');
+            }
+        }
+
+        function iFunc() {
+            var a = document.getElementById('gal-V');
+            var b = document.getElementById('gal-I');
+            var c = document.getElementById('walkthrough');
+            var d = document.getElementById('photos');
+            if (b.style.display === 'none') {
+                a.style.display = 'none';
+                b.style.display = 'block';
+                c.classList.remove('active-gal');
+                d.classList.add('active-gal');
+            }
+        }
+    </script>
+
     <!-- #################################################################################### -->
-    <div class="amenities">
+    <div class="amenities" id="amenities">
         <div class="amenities-title">Amenities</div>
         <div class="carousel-A">
-                <div class="carousel">
-                    <ul class="carousel__list">
-                        <li class="carousel__item" data-pos="-2">
-                            <img src="images/section2/Relax & Rejuvenate.jpg" alt="">
-                        </li>
-                        <li class="carousel__item" data-pos="-1">
-                            <img src="images/section2/Unite & Celebrate.jpg" alt="">
-                        </li>
-                        <li class="carousel__item" data-pos="0">
-                            <img src="images/section2/Meet, Greet & Talk.jpg" alt="">
-                        </li>
-                        <li class="carousel__item" data-pos="1">
-                            <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="">
-                        </li>
-                        <li class="carousel__item" data-pos="2">
-                            <img src="images/section2/Play & Enjoy.jpg" alt="">
-                        </li>
-                    </ul>
-                </div>
+            <div class="carousel">
+                <ul class="carousel__list">
+                    <img src="images/section2/Relax & Rejuvenate.jpg" alt="" class="carousel__item" data-pos="-2">
+                    <img src="images/section2/Unite & Celebrate.jpg" alt="" class="carousel__item" data-pos="-1">
+                    <img src="images/section2/Meet, Greet & Talk.jpg" alt="" class="carousel__item" data-pos="0">
+                    <img src="images/section2/Mingle, Mix & Laugh.jpg" alt="" class="carousel__item" data-pos="1">
+                    <img src="images/section2/Play & Enjoy.jpg" alt="" class="carousel__item" data-pos="2">
+                </ul>
+            </div>
 
-                <div class="ellipse">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </div>
+            <div class="ellipse">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
 
-                <div class="carousel-descrip">
-                    <p class="carousel-title">
-                        Clubhouse
-                    </p>
-                    <p class="carousel-details">
-                        From lobbies of the living areas, various seating clusters in & around the project to the corridor spaces, there are various thoughtfully designed ‘pause points’ to incorporate enthusiastic welcomes and lingering goodbyes. Wholesome architectural enhancements for you to meet, greet & talk.
-                    </p>
-                </div>
+            <div class="carousel-descrip">
+                <p class="carousel-title">
+                    Clubhouse
+                </p>
+                <p class="carousel-details">
+                    From lobbies of the living areas, various seating clusters in & around the project to the corridor spaces, there are various thoughtfully designed ‘pause points’ to incorporate enthusiastic welcomes and lingering goodbyes. Wholesome architectural enhancements for you to meet, greet & talk.
+                </p>
+            </div>
         </div>
     </div>
 
@@ -423,7 +482,7 @@
         </p>
         <div class="location-descrip">
             <div class="location-img">
-                <img src="images/soultree/soultree.jpg"
+                <img src="images/Location.png"
                 srcset="images/soultree/soultree@2x.jpg 2x,
                 images/soultree/soultree@3x.jpg 3x">            
             </div>
@@ -565,6 +624,47 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.ellipse2',
+                prevEl: '.ellipse1',
+            },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+            })
+
+
+
+            //#################################################
+            var mySwiper = new Swiper('.gal-img', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+            // slidesPerView: 1,
+
+            navigation: {
+                nextEl: '.left-box',
+                prevEl: '.right-box',
+            },
+        })
+    </script>
+
+
+
     <script>  
     
             var prevScrollpos = window.pageYOffset;
@@ -593,29 +693,6 @@
             }
             }
 
-
-
-                    var mySwiper = new Swiper('.swiper-container', {
-                // Optional parameters
-                loop: true,
-                slidesPerView: 3,
-
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                })
-
-        var mySwiper = new Swiper('.sketch-carousel', {
-                    slidesPerView: 'auto',
-                    // spaceBetween: 16,
-                
-                    navigation: {
-                    nextEl: '.right',
-                    prevEl: '.left',
-                    },
-                })
            
 
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -643,55 +720,55 @@
             },
         })
          }
-
-
-
-
-        //  Carousel
-        const state = {};
-        const carouselList = document.querySelector('.carousel__list');
-        const carouselItems = document.querySelectorAll('.carousel__item');
-        const elems = Array.from(carouselItems);
-
-        carouselList.addEventListener('click', function (event) {
-        var newActive = event.target;
-        var isItem = newActive.closest('.carousel__item');
-
-        if (!isItem || newActive.classList.contains('carousel__item_active')) {
-            return;
-        };
-        
-        update(newActive);
-        });
-
-        const update = function(newActive) {
-        const newActivePos = newActive.dataset.pos;
-
-        const current = elems.find((elem) => elem.dataset.pos == 0);
-        const prev = elems.find((elem) => elem.dataset.pos == -1);
-        const next = elems.find((elem) => elem.dataset.pos == 1);
-        const first = elems.find((elem) => elem.dataset.pos == -2);
-        const last = elems.find((elem) => elem.dataset.pos == 2);
-        
-        current.classList.remove('carousel__item_active');
-        
-        [current, prev, next, first, last].forEach(item => {
-            var itemPos = item.dataset.pos;
-
-            item.dataset.pos = getPos(itemPos, newActivePos)
-        });
-        };
-
-        const getPos = function (current, active) {
-        const diff = current - active;
-
-        if (Math.abs(current - active) > 2) {
-            return -current
-        }
-
-        return diff;
-        }
     </script>
+
+
+    <script>
+        const state = {};
+    const carouselList = document.querySelector('.carousel__list');
+    const carouselItems = document.querySelectorAll('.carousel__item');
+    const elems = Array.from(carouselItems);
+
+    carouselList.addEventListener('click', function (event) {
+    var newActive = event.target;
+    var isItem = newActive.closest('.carousel__item');
+
+    if (!isItem || newActive.classList.contains('carousel__item_active')) {
+    return;
+    };
+
+    update(newActive);
+    });
+
+    const update = function(newActive) {
+    const newActivePos = newActive.dataset.pos;
+
+    const current = elems.find((elem) => elem.dataset.pos == 0);
+    const prev = elems.find((elem) => elem.dataset.pos == -1);
+    const next = elems.find((elem) => elem.dataset.pos == 1);
+    const first = elems.find((elem) => elem.dataset.pos == -2);
+    const last = elems.find((elem) => elem.dataset.pos == 2);
+
+    current.classList.remove('carousel__item_active');
+
+    [current, prev, next, first, last].forEach(item => {
+    var itemPos = item.dataset.pos;
+
+    item.dataset.pos = getPos(itemPos, newActivePos)
+    });
+    };
+
+    const getPos = function (current, active) {
+    const diff = current - active;
+
+    if (Math.abs(current - active) > 2) {
+    return -current
+    }
+
+    return diff;
+    }
+    </script>
+
 
     <script>
         AOS.init({
